@@ -318,6 +318,34 @@
       line-height: 1.6;
     }
 
+    /* zone affiliations sous la timeline */
+    .affiliations {
+      max-width: 760px;
+      margin: 3.5rem auto 0;
+      text-align: center;
+      padding: 2rem 1rem 0;
+      border-top: 1px solid var(--gold-soft);
+    }
+    .affiliations-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sepia-mute);
+      margin-bottom: 0.8rem;
+    }
+    .affiliations-list {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--sepia-soft);
+    }
+    .affiliations-list span:not(:last-child)::after {
+      content: ' · ';
+      color: var(--copper);
+      margin: 0 0.4rem;
+      font-style: normal;
+    }
+
     /* Responsive : timeline en colonne unique sur mobile */
     @media (max-width: 700px) {
       .journey-timeline::before {
@@ -563,35 +591,52 @@
     <div class="journey-timeline">
 
       <div class="journey-step">
-        <span class="year">[année]</span>
-        <h3>Premières écritures</h3>
-        <p><!-- À COMPLÉTER : description du jalon — par exemple les débuts de l'écriture poétique, premier recueil, etc. --></p>
+        <span class="year">Années 70</span>
+        <h3>Peintre</h3>
+        <p>Paysages francs-comtois, natures mortes, sous-bois aux chemins creux. Huile sur toile, toutes dimensions. Formation aux bases de la peinture à Belfort.</p>
       </div>
 
       <div class="journey-step">
-        <span class="year">[année]</span>
-        <h3>Découverte de la peinture</h3>
-        <p><!-- À COMPLÉTER : entrée dans la pratique picturale --></p>
+        <span class="year">Années 80</span>
+        <h3>Romancière</h3>
+        <p>Onze romans publiés, autant en attente d'édition. De nombreuses récompenses littéraires pour des œuvres où fusionnent fiction et parfum de terroir. Roman-fleuve de 1 300 pages : <em>Le Violoniste</em>.</p>
+        <!-- À COMPLÉTER : annoncer la prochaine parution et sa forme -->
       </div>
 
       <div class="journey-step">
-        <span class="year">[année]</span>
-        <h3>Romans et nouvelles</h3>
-        <p><!-- À COMPLÉTER : œuvres romanesques, publications --></p>
+        <span class="year">✦</span>
+        <h3>Poétesse</h3>
+        <p>Cent dix poèmes à l'honneur de la Franche-Comté.</p>
       </div>
 
       <div class="journey-step">
-        <span class="year">[année]</span>
-        <h3>Naissance des Fêlés</h3>
-        <p>Avec Thierry Voitot, formation du duo musical-poétique sous l'égide de VIA GNOSIS — résurgence de la Guilde des Poètes.</p>
+        <span class="year">✦</span>
+        <h3>Parolière</h3>
+        <p>Plus de cent textes de chanson, dont de nombreux mis en musique par Thierry Voitot.</p>
       </div>
 
       <div class="journey-step">
-        <span class="year">2026</span>
-        <h3>Photon-Expo &amp; ateliers</h3>
-        <p>Animation de l'atelier Écriture lors du festival Photon-Expo à Offemont — initiation à l'écriture poétique et créative.</p>
+        <span class="year">2023</span>
+        <h3>Sculptrice sur bois</h3>
+        <p>Invente l'« arrapolisculpture » : œuvres obtenues par arrachage, polissage et sculptage du vieux bois de chêne.</p>
       </div>
 
+      <div class="journey-step">
+        <span class="year">Aujourd'hui</span>
+        <h3>Les Fêlés</h3>
+        <p>Avec Thierry Voitot, formation du duo musical-poétique sous l'égide de VIA GNOSIS.</p>
+      </div>
+
+    </div>
+
+    <div class="affiliations">
+      <p class="affiliations-label">Membre de</p>
+      <p class="affiliations-list">
+        <span>ACAI</span>
+        <span>SHAARL</span>
+        <span>Les Plumes Courtoises</span>
+        <span>La Guilde des Poètes</span>
+      </p>
     </div>
   </section>
 
