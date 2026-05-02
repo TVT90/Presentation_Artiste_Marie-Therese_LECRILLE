@@ -435,6 +435,1090 @@
     }
     .duo-member p { font-size: 0.95rem; color: var(--sepia-soft); }
 
+    /* =========  ŒUVRES / CHAPITRES  ========= */
+    .works {
+      background-color: var(--cream);
+    }
+
+    /* En-tête de chapitre */
+    .chapter {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 0;
+    }
+    .chapter + .chapter {
+      margin-top: 3rem;
+    }
+    .chapter + .chapter::before {
+      content: '✦';
+      display: block;
+      text-align: center;
+      color: var(--copper);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      opacity: 0.6;
+    }
+    .chapter-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .chapter-num {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 0.6rem;
+    }
+    .chapter-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--sepia-deep);
+    }
+
+    /* Chapitre I — Chansons : grille existante */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .work-card {
+      background-color: var(--paper);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--shadow-soft);
+      transition: transform .35s ease, box-shadow .35s ease;
+      position: relative;
+    }
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .work-card .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper);
+      border: 1px solid var(--copper);
+      padding: 0.2rem 0.7rem;
+      border-radius: 2px;
+      margin-bottom: 1rem;
+    }
+    .work-card h3 {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .work-card .meta {
+      font-size: 0.85rem;
+      color: var(--sepia-mute);
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+    .work-card p {
+      font-size: 0.95rem;
+      color: var(--sepia-soft);
+      margin-bottom: 1.2rem;
+    }
+    .work-card .listen-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 2px;
+    }
+    .work-card .listen-link:hover { border-color: var(--copper-bright); }
+
+    /* Chapitre II — Romans : œuvre majeure */
+    .novel-feature {
+      background-color: var(--paper);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      padding: 2.8rem 2rem 2.4rem;
+      text-align: center;
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      position: relative;
+    }
+    .novel-feature::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 40px; right: 40px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    }
+    .novel-feature .feature-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 1rem;
+    }
+    .novel-feature h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4.5vw, 2.6rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--sepia-deep);
+      margin-bottom: 0.4rem;
+    }
+    .novel-feature .pages {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--copper);
+      margin-bottom: 1.2rem;
+    }
+    .novel-feature p {
+      font-size: 1rem;
+      color: var(--sepia-soft);
+      font-style: italic;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .novel-stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2.5rem 3rem;
+      text-align: center;
+    }
+    .novel-stat {
+      min-width: 130px;
+    }
+    .novel-stat .number {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--copper);
+      font-style: italic;
+      line-height: 1;
+      font-weight: 500;
+    }
+    .novel-stat .label {
+      font-size: 0.8rem;
+      color: var(--sepia-mute);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+
+    /* Chapitres III & IV : intro centrée */
+    .chapter-intro {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--sepia-soft);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+    /* Chapitre III — Poésies : extrait */
+    .poem-excerpt {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 2rem 2.5rem;
+      border-left: 2px solid var(--copper);
+      background-color: var(--paper);
+      border-radius: 0 4px 4px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: var(--sepia-deep);
+      line-height: 1.8;
+    }
+    .poem-excerpt cite {
+      display: block;
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      color: var(--sepia-mute);
+      font-style: normal;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Chapitre IV — Peintures : galerie */
+    .paintings-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    .painting-card {
+      background-color: var(--paper);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .painting-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+    .painting-placeholder {
+      background:
+        linear-gradient(135deg, var(--paper-deep) 0%, var(--gold-soft) 50%, var(--paper-deep) 100%);
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--copper);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      position: relative;
+    }
+    .painting-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid var(--copper);
+      opacity: 0.3;
+    }
+    .painting-card .info {
+      padding: 1.1rem 1.4rem;
+    }
+    .painting-card h4 {
+      font-size: 1.05rem;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+      color: var(--sepia-deep);
+    }
+    .painting-card .technique {
+      font-size: 0.82rem;
+      color: var(--sepia-mute);
+      letter-spacing: 0.05em;
+    }
+
+    .gallery-note {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--sepia-mute);
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+
+    /* =========  CONTACT  ========= */
+    .contact {
+      background-color: var(--paper);
+      text-align: center;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 3rem auto 0;
+    }
+    .contact-item {
+      padding: 1.5rem;
+    }
+    .contact-item .label {
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--sepia-mute);
+      margin-bottom: 0.6rem;
+    }
+    .contact-item .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      color: var(--sepia-deep);
+    }
+    .contact-item .value a { color: var(--sepia-deep); }
+    .contact-item .value a:hover { color: var(--copper); }
+
+    /* =========  FOOTER  ========= */
+    footer {
+      background-color: var(--sepia-deep);
+      color: var(--gold-soft);
+      padding: 3rem 2rem 2rem;
+      text-align: center;
+    }
+    footer .footer-quote {
+      font-family: 'Petit Formal Script', cursive;
+      font-size: 1.4rem;
+      color: var(--copper-bright);
+      margin-bottom: 1.5rem;
+    }
+    footer .footer-meta {
+      font-size: 0.85rem;
+      color: var(--gold-soft);
+      opacity: 0.75;
+      letter-spacing: 0.1em;
+    }
+    footer .footer-meta p { margin: 0.3rem 0; }
+
+    /* =========  RESPONSIVE  ========= */
+    @media (max-width: 600px) {
+      section { padding: 3.5rem 1.2rem; }
+      .approach { padding: 4rem 1.5rem; }
+      .hero-content { padding: 3rem 1.2rem; }
+      .duo-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===========  HERO  =========== -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-ornament">✦ ✦ ✦</div>
+      <h1>Marie-Thérèse <em>Lecrille</em></h1>
+      <p class="hero-subtitle">Poétesse · Parolière · Romancière · Peintre · Auteure SACEM</p>
+      <div class="hero-tags">
+        <span>Mots</span>
+        <span>Mélodies</span>
+        <span>Mémoires</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===========  DÉMARCHE  =========== -->
+  <section class="approach">
+    <div class="inner">
+      <div class="section-header">
+        <h2>Univers poétique</h2>
+        <div class="section-divider"><span>◈</span></div>
+      </div>
+      <p>
+        Écrire, c'est traverser des paysages intimes pour en rapporter des fragments de lumière.
+        Mes mots cherchent ce qui affleure derrière le visible — les visages aimés, les silences
+        habités, les fêlures qui rendent les êtres précieux. La poésie devient chanson, le souvenir
+        devient roman, et chaque texte est une main tendue vers celles et ceux qui voudront bien
+        l'attraper.
+        <span class="signature-quote">« C'est par les fêlures que vient la lumière »</span>
+      </p>
+      <!-- À COMPLÉTER : Marie-Thérèse, ce paragraphe est un placeholder.
+           Tu peux me dicter ton propre texte d'accroche et je le remplacerai. -->
+    </div>
+  </section>
+
+  <!-- ===========  PARCOURS ARTISTIQUE  =========== -->
+  <section class="journey">
+    <div class="section-header">
+      <h2>Parcours artistique</h2>
+      <div class="section-divider"><span>jalons d'une vie créatrice</span></div>
+    </div>
+
+    <div class="journey-timeline">
+
+      <div class="journey-step">
+        <span class="year">Années 70</span>
+        <h3>Peintre</h3>
+        <p>Paysages francs-comtois, natures mortes, sous-bois aux chemins creux. Huile sur toile, toutes dimensions. Formation aux bases de la peinture à Belfort.</p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">Années 80</span>
+        <h3>Romancière</h3>
+        <p>Onze romans publiés, autant en attente d'édition. De nombreuses récompenses littéraires pour des œuvres où fusionnent fiction et parfum de terroir. Roman-fleuve de 1 300 pages : <em>Le Violoniste</em>.</p>
+        <!-- À COMPLÉTER : annoncer la prochaine parution et sa forme -->
+      </div>
+
+      <div class="journey-step">
+        <span class="year">✦</span>
+        <h3>Poétesse</h3>
+        <p>Cent dix poèmes à l'honneur de la Franche-Comté.</p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">✦</span>
+        <h3>Parolière</h3>
+        <p>Plus de cent textes de chanson, dont de nombreux mis en musique par <a href="https://tvt90.github.io/artist-presentation/" target="_blank" rel="noopener" class="inline-link">Thierry Voitot</a>.</p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">2023</span>
+        <h3>Sculptrice sur bois</h3>
+        <p>Invente l'« arrapolisculpture » : œuvres obtenues par arrachage, polissage et sculptage du vieux bois de chêne.</p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">Aujourd'hui</span>
+        <h3>Les Fêlés</h3>
+        <p>Avec Thierry Voitot, formation du duo musical-poétique sous l'égide de VIA GNOSIS.</p>
+      </div>
+
+    </div>
+
+    <div class="affiliations">
+      <p class="affiliations-label">Membre de</p>
+      <p class="affiliations-list">
+        <span>ACAI</span>
+        <span>SHAARL</span>
+        <span>Les Plumes Courtoises</span>
+        <span>La Guilde des Poètes</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===========  LE DUO LES FÊLÉS  =========== -->
+  <section class="duo">
+    <div class="section-header">
+      <h2>Les Fêlés</h2>
+      <div class="section-divider"><span>duo musical &amp; poétique</span></div>
+    </div>
+
+    <div class="duo-card">
+      <h3>Une résurgence de la Guilde des Poètes</h3>
+      <p class="duo-intro">
+        Un dialogue entre tradition poétique et modernité musicale, où chaque chanson naît
+        d'un échange à deux voix — la poétesse et le compositeur — accompagnés par l'IA comme
+        partenaire de création.
+      </p>
+
+      <div class="duo-grid">
+        <div class="duo-member">
+          <h4>Marie-Thérèse Lecrille</h4>
+          <p class="role">Poétesse, parolière, romancière, peintre</p>
+          <p>Auteure SACEM. Apporte au duo l'écriture, la sensibilité narrative et la voix poétique.</p>
+        </div>
+        <div class="duo-member">
+          <h4>Thierry Voitot</h4>
+          <p class="role">Auteur-compositeur, explorateur IA</p>
+          <p>SACEM. Compose les architectures musicales et anime la symbiose créative humain – IA sous l'égide de <em>VIA GNOSIS</em>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========  ŒUVRES / QUATRE CHAPITRES  =========== -->
+  <section class="works">
+    <div class="section-header">
+      <h2>Quelques œuvres</h2>
+      <div class="section-divider"><span>en quatre chapitres</span></div>
+    </div>
+
+    <!-- ────────  CHAPITRE I — CHANSONS  ──────── -->
+    <article class="chapter">
+      <header class="chapter-header">
+        <span class="chapter-num">Chapitre I</span>
+        <h3 class="chapter-title">Chansons</h3>
+      </header>
+
+      <div class="works-grid">
+
+        <article class="work-card">
+          <span class="badge">Best-seller</span>
+          <h3>Mon père</h3>
+          <p class="meta">Hommage paternel · Plus de 6 700 vues</p>
+          <p>Une déclaration intime, devenue le titre le plus écouté du duo sur YouTube.</p>
+          <!-- À COMPLÉTER : remplacer # par l'URL YouTube exacte -->
+          <a class="listen-link" href="#" target="_blank" rel="noopener">Écouter →</a>
+        </article>
+
+        <article class="work-card">
+          <span class="badge">Récent</span>
+          <h3>Toi, la Terre et l'Amour</h3>
+          <p class="meta">Ballade · 2026</p>
+          <p>Un chant pour la Terre nourricière et les liens qui nous traversent.</p>
+          <!-- À COMPLÉTER : URL YouTube -->
+          <a class="listen-link" href="#" target="_blank" rel="noopener">Écouter →</a>
+        </article>
+
+        <article class="work-card">
+          <h3><!-- À COMPLÉTER : titre de chanson --></h3>
+          <p class="meta"><!-- À COMPLÉTER : style / année --></p>
+          <p><!-- À COMPLÉTER : courte description --></p>
+          <a class="listen-link" href="#" target="_blank" rel="noopener">Écouter →</a>
+        </article>
+
+      </div>
+    </article>
+
+    <!-- ────────  CHAPITRE II — ROMANS  ──────── -->
+    <article class="chapter">
+      <header class="chapter-header">
+        <span class="chapter-num">Chapitre II</span>
+        <h3 class="chapter-title">Romans</h3>
+      </header>
+
+      <div class="novel-feature">
+        <span class="feature-tag">Œuvre majeure</span>
+        <h4>Le Violoniste</h4>
+        <p class="pages">Roman-fleuve · 1 300 pages</p>
+        <p>Une saga où fusionnent fiction et parfum de terroir.</p>
+      </div>
+
+      <div class="novel-stats">
+        <div class="novel-stat">
+          <span class="number">11</span>
+          <p class="label">Romans publiés</p>
+        </div>
+        <div class="novel-stat">
+          <span class="number">11</span>
+          <p class="label">En attente d'édition</p>
+        </div>
+        <div class="novel-stat">
+          <span class="number">★</span>
+          <p class="label">Récompenses littéraires</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ────────  CHAPITRE III — POÉSIES  ──────── -->
+    <article class="chapter">
+      <header class="chapter-header">
+        <span class="chapter-num">Chapitre III</span>
+        <h3 class="chapter-title">Poésies</h3>
+      </header>
+
+      <p class="chapter-intro">
+        Cent dix poèmes à l'honneur de la Franche-Comté — paysages, terroir, mémoire des lieux.
+      </p>
+
+      <blockquote class="poem-excerpt">
+        <!-- À COMPLÉTER : un quatrain ou un extrait choisi par Marie-Thérèse -->
+        « Un extrait choisi sera placé ici, comme une fenêtre ouverte
+        sur les paysages que les vers traversent. »
+        <cite>— extrait à choisir</cite>
+      </blockquote>
+    </article>
+
+    <!-- ────────  CHAPITRE IV — PEINTURES  ──────── -->
+    <article class="chapter">
+      <header class="chapter-header">
+        <span class="chapter-num">Chapitre IV</span>
+        <h3 class="chapter-title">Peintures</h3>
+      </header>
+
+      <p class="chapter-intro">
+        Paysages francs-comtois, natures mortes, sous-bois aux chemins creux. Huile sur toile.
+      </p>
+
+      <div class="paintings-gallery">
+        <div class="painting-card">
+          <div class="painting-placeholder">Paysages</div>
+          <div class="info">
+            <h4>Paysages francs-comtois</h4>
+            <p class="technique">Huile sur toile</p>
+          </div>
+        </div>
+
+        <div class="painting-card">
+          <div class="painting-placeholder">Sous-bois</div>
+          <div class="info">
+            <h4>Sous-bois aux chemins creux</h4>
+            <p class="technique">Huile sur toile</p>
+          </div>
+        </div>
+
+        <div class="painting-card">
+          <div class="painting-placeholder">Natures mortes</div>
+          <div class="info">
+            <h4>Natures mortes</h4>
+            <p class="technique">Huile sur toile</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="gallery-note">
+        <!-- À COMPLÉTER : remplacer les vignettes par des photos d'œuvres -->
+        Galerie en cours de constitution — les photographies des œuvres viendront enrichir cette section.
+      </p>
+    </article>
+
+  </section>
+
+  <!-- ===========  CONTACT  =========== -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <h2>Prendre contact</h2>
+      <div class="section-divider"><span>◈</span></div>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-item">
+        <div class="label">Courriel</div>
+        <div class="value">
+          <!-- À COMPLÉTER : adresse email de Marie-Thérèse -->
+          <a href="mailto:adresse@exemple.com">adresse@exemple.com</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="label">Téléphone</div>
+        <div class="value">
+          <!-- À COMPLÉTER : numéro de téléphone -->
+          <a href="tel:+33000000000">+33 0 00 00 00 00</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <div class="label">YouTube</div>
+        <div class="value">
+          <!-- À COMPLÉTER : URL chaîne YouTube -->
+          <a href="#" target="_blank" rel="noopener">Chaîne du duo</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===========  FOOTER  =========== -->
+  <footer>
+    <p class="footer-quote">Les Fêlés — où la lumière passe par les fissures</p>
+    <div class="footer-meta">
+      <p>Marie-Thérèse Lecrille · Auteure SACEM</p>
+      <p>© 2026 — Tous droits réservés</p>
+      <p>Site VIA GNOSIS · création <a href="https://tvt90.github.io/artist-presentation/" target="_blank" rel="noopener" style="color: var(--copper-bright);">Thierry Voitot</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marie-Thérèse Lecrille — Poétesse, parolière, auteure-compositrice</title>
+  <meta name="description" content="Marie-Thérèse Lecrille, poétesse et romancière, auteure-compositrice SACEM. Membre du duo Les Fêlés (VIA GNOSIS)." />
+
+  <!-- Google Fonts : Cormorant Garamond (display littéraire) + Lora (body) + Petit Formal Script (signature) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========  PALETTE & VARIABLES  ========= */
+    :root {
+      --cream:        #f5e6d3;
+      --paper:        #faf2e4;
+      --paper-deep:   #efe0c8;
+      --sepia-deep:   #3e2817;
+      --sepia-soft:   #5c4633;
+      --sepia-mute:   #7a5c40;
+      --copper:       #a0522d;
+      --copper-bright:#c68642;
+      --gold-soft:    #e8d4b0;
+      --vein:         #8b4513;
+      --shadow:       0 2px 24px rgba(62, 40, 23, 0.12);
+      --shadow-soft:  0 1px 8px rgba(62, 40, 23, 0.08);
+    }
+
+    /* =========  BASE  ========= */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--sepia-deep);
+      background-color: var(--paper);
+      background-image:
+        /* grain papier */
+        radial-gradient(rgba(139, 69, 19, 0.04) 1px, transparent 1px),
+        radial-gradient(rgba(62, 40, 23, 0.025) 1px, transparent 1px);
+      background-size: 3px 3px, 7px 7px;
+      background-position: 0 0, 1px 2px;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-weight: 500;
+      color: var(--sepia-deep);
+      letter-spacing: 0.01em;
+    }
+
+    a {
+      color: var(--copper);
+      text-decoration: none;
+      transition: color .25s ease;
+    }
+    a:hover { color: var(--copper-bright); }
+
+    /* lien intégré dans une phrase : soulignement cuivré subtil */
+    .inline-link {
+      color: var(--sepia-deep);
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 1px;
+      transition: color .25s ease, border-color .25s ease;
+    }
+    .inline-link:hover {
+      color: var(--copper);
+      border-bottom-color: var(--copper-bright);
+    }
+
+    /* =========  HERO  ========= */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('feuille-hero.png');
+      background-size: cover;
+      background-position: center;
+      filter: contrast(1.05);
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at center,
+          rgba(245, 230, 211, 0.65) 0%,
+          rgba(245, 230, 211, 0.85) 45%,
+          rgba(245, 230, 211, 0.95) 100%);
+      z-index: -1;
+    }
+
+    .hero-content {
+      text-align: center;
+      padding: 4rem 2rem;
+      max-width: 800px;
+      animation: fadeUp 1.6s ease-out;
+    }
+
+    .hero-ornament {
+      font-size: 1.4rem;
+      color: var(--copper);
+      letter-spacing: 0.6em;
+      margin-bottom: 1.5rem;
+      opacity: 0.75;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      margin-bottom: 1.2rem;
+      color: var(--sepia-deep);
+      text-shadow:
+        0 2px 24px rgba(250, 242, 228, 0.85),
+        0 1px 2px rgba(250, 242, 228, 0.6);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--copper);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.15rem, 2.4vw, 1.5rem);
+      color: var(--sepia-deep);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 2.5rem;
+      text-shadow:
+        0 1px 0 rgba(250, 242, 228, 0.9),
+        0 0 18px rgba(250, 242, 228, 0.85);
+    }
+
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.4rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sepia-deep);
+      font-weight: 500;
+      text-shadow: 0 0 12px rgba(250, 242, 228, 0.9);
+    }
+    .hero-tags span { white-space: nowrap; }
+    .hero-tags span + span::before {
+      content: '·';
+      margin-right: 1.4rem;
+      color: var(--copper);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========  SECTIONS GÉNÉRALES  ========= */
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-style: italic;
+      font-weight: 500;
+      color: var(--sepia-deep);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: var(--copper);
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    }
+    .section-divider span {
+      font-size: 0.9rem;
+      letter-spacing: 0.4em;
+    }
+
+    /* =========  DÉMARCHE  ========= */
+    .approach {
+      background-color: var(--cream);
+      max-width: none;
+      margin: 0;
+      padding: 6rem 2rem;
+    }
+    .approach .inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .approach p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      line-height: 1.6;
+      font-style: italic;
+      color: var(--sepia-soft);
+      text-align: center;
+    }
+    .approach p::first-letter {
+      font-size: 2.4em;
+      float: left;
+      line-height: 1;
+      padding: 0.05em 0.1em 0 0;
+      color: var(--copper);
+      font-weight: 500;
+    }
+    .approach .signature-quote {
+      display: block;
+      margin-top: 2.5rem;
+      font-family: 'Petit Formal Script', cursive;
+      font-style: normal;
+      font-size: 1.4rem;
+      color: var(--copper);
+      text-align: center;
+    }
+
+    /* =========  PARCOURS ARTISTIQUE  ========= */
+    .journey {
+      background-color: var(--paper);
+    }
+    .journey-timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 3rem auto 0;
+      padding: 1rem 0;
+    }
+    /* ligne verticale dorée */
+    .journey-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        var(--copper) 8%,
+        var(--copper) 92%,
+        transparent 100%);
+      transform: translateX(-50%);
+    }
+    .journey-step {
+      position: relative;
+      width: 50%;
+      padding: 1.2rem 2.5rem;
+      box-sizing: border-box;
+    }
+    .journey-step:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .journey-step:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    /* point cuivré sur la ligne */
+    .journey-step::before {
+      content: '';
+      position: absolute;
+      top: 1.8rem;
+      width: 12px;
+      height: 12px;
+      background-color: var(--copper);
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--copper);
+    }
+    .journey-step:nth-child(odd)::before {
+      right: -6px;
+    }
+    .journey-step:nth-child(even)::before {
+      left: -6px;
+    }
+    .journey-step .year {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--copper);
+      margin-bottom: 0.3rem;
+    }
+    .journey-step h3 {
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: var(--sepia-deep);
+    }
+    .journey-step p {
+      font-size: 0.95rem;
+      color: var(--sepia-soft);
+      line-height: 1.6;
+    }
+
+    /* zone affiliations sous la timeline */
+    .affiliations {
+      max-width: 760px;
+      margin: 3.5rem auto 0;
+      text-align: center;
+      padding: 2rem 1rem 0;
+      border-top: 1px solid var(--gold-soft);
+    }
+    .affiliations-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sepia-mute);
+      margin-bottom: 0.8rem;
+    }
+    .affiliations-list {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--sepia-soft);
+    }
+    .affiliations-list span:not(:last-child)::after {
+      content: ' · ';
+      color: var(--copper);
+      margin: 0 0.4rem;
+      font-style: normal;
+    }
+
+    /* Responsive : timeline en colonne unique sur mobile */
+    @media (max-width: 700px) {
+      .journey-timeline::before {
+        left: 12px;
+      }
+      .journey-step,
+      .journey-step:nth-child(odd),
+      .journey-step:nth-child(even) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 2.5rem;
+        padding-right: 0.5rem;
+      }
+      .journey-step::before,
+      .journey-step:nth-child(odd)::before,
+      .journey-step:nth-child(even)::before {
+        left: 6px;
+        right: auto;
+      }
+    }
+
+    /* =========  DUO LES FÊLÉS  ========= */
+    .duo {
+      background-color: var(--paper);
+    }
+    .duo-card {
+      background-color: var(--paper-deep);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      padding: 3rem 2.5rem;
+      box-shadow: var(--shadow);
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .duo-card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 20px; right: 20px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+    }
+    .duo-card h3 {
+      font-style: italic;
+      font-size: 1.8rem;
+      color: var(--copper);
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .duo-card .duo-intro {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: var(--sepia-soft);
+    }
+    .duo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    @media (max-width: 700px) {
+      .duo-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .duo-member h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+    }
+    .duo-member .role {
+      font-style: italic;
+      color: var(--sepia-mute);
+      font-size: 0.95rem;
+      margin-bottom: 0.6rem;
+    }
+    .duo-member p { font-size: 0.95rem; color: var(--sepia-soft); }
+
     /* =========  ŒUVRES / CHANSONS  ========= */
     .works {
       background-color: var(--cream);
