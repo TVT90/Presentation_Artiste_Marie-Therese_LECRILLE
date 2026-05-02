@@ -62,6 +62,18 @@
     }
     a:hover { color: var(--copper-bright); }
 
+    /* lien intégré dans une phrase : soulignement cuivré subtil */
+    .inline-link {
+      color: var(--sepia-deep);
+      border-bottom: 1px solid var(--copper);
+      padding-bottom: 1px;
+      transition: color .25s ease, border-color .25s ease;
+    }
+    .inline-link:hover {
+      color: var(--copper);
+      border-bottom-color: var(--copper-bright);
+    }
+
     /* =========  HERO  ========= */
     .hero {
       position: relative;
@@ -612,7 +624,7 @@
       <div class="journey-step">
         <span class="year">✦</span>
         <h3>Parolière</h3>
-        <p>Plus de cent textes de chanson, dont de nombreux mis en musique par Thierry Voitot.</p>
+        <p>Plus de cent textes de chanson, dont de nombreux mis en musique par <a href="https://tvt90.github.io/artist-presentation/" target="_blank" rel="noopener" class="inline-link">Thierry Voitot</a>.</p>
       </div>
 
       <div class="journey-step">
