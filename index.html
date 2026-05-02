@@ -241,6 +241,105 @@
       text-align: center;
     }
 
+    /* =========  PARCOURS ARTISTIQUE  ========= */
+    .journey {
+      background-color: var(--paper);
+    }
+    .journey-timeline {
+      position: relative;
+      max-width: 760px;
+      margin: 3rem auto 0;
+      padding: 1rem 0;
+    }
+    /* ligne verticale dorée */
+    .journey-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg,
+        transparent 0%,
+        var(--copper) 8%,
+        var(--copper) 92%,
+        transparent 100%);
+      transform: translateX(-50%);
+    }
+    .journey-step {
+      position: relative;
+      width: 50%;
+      padding: 1.2rem 2.5rem;
+      box-sizing: border-box;
+    }
+    .journey-step:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+    .journey-step:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+    /* point cuivré sur la ligne */
+    .journey-step::before {
+      content: '';
+      position: absolute;
+      top: 1.8rem;
+      width: 12px;
+      height: 12px;
+      background-color: var(--copper);
+      border: 2px solid var(--paper);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px var(--copper);
+    }
+    .journey-step:nth-child(odd)::before {
+      right: -6px;
+    }
+    .journey-step:nth-child(even)::before {
+      left: -6px;
+    }
+    .journey-step .year {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.4rem;
+      color: var(--copper);
+      margin-bottom: 0.3rem;
+    }
+    .journey-step h3 {
+      font-size: 1.25rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      color: var(--sepia-deep);
+    }
+    .journey-step p {
+      font-size: 0.95rem;
+      color: var(--sepia-soft);
+      line-height: 1.6;
+    }
+
+    /* Responsive : timeline en colonne unique sur mobile */
+    @media (max-width: 700px) {
+      .journey-timeline::before {
+        left: 12px;
+      }
+      .journey-step,
+      .journey-step:nth-child(odd),
+      .journey-step:nth-child(even) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding-left: 2.5rem;
+        padding-right: 0.5rem;
+      }
+      .journey-step::before,
+      .journey-step:nth-child(odd)::before,
+      .journey-step:nth-child(even)::before {
+        left: 6px;
+        right: auto;
+      }
+    }
+
     /* =========  DUO LES FÊLÉS  ========= */
     .duo {
       background-color: var(--paper);
@@ -425,7 +524,7 @@
     <div class="hero-content">
       <div class="hero-ornament">✦ ✦ ✦</div>
       <h1>Marie-Thérèse <em>Lecrille</em></h1>
-      <p class="hero-subtitle">Poétesse · Parolière · Romancière · Auteure-compositrice SACEM</p>
+      <p class="hero-subtitle">Poétesse · Parolière · Romancière · Peintre · Auteure SACEM</p>
       <div class="hero-tags">
         <span>Mots</span>
         <span>Mélodies</span>
@@ -454,6 +553,48 @@
     </div>
   </section>
 
+  <!-- ===========  PARCOURS ARTISTIQUE  =========== -->
+  <section class="journey">
+    <div class="section-header">
+      <h2>Parcours artistique</h2>
+      <div class="section-divider"><span>jalons d'une vie créatrice</span></div>
+    </div>
+
+    <div class="journey-timeline">
+
+      <div class="journey-step">
+        <span class="year">[année]</span>
+        <h3>Premières écritures</h3>
+        <p><!-- À COMPLÉTER : description du jalon — par exemple les débuts de l'écriture poétique, premier recueil, etc. --></p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">[année]</span>
+        <h3>Découverte de la peinture</h3>
+        <p><!-- À COMPLÉTER : entrée dans la pratique picturale --></p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">[année]</span>
+        <h3>Romans et nouvelles</h3>
+        <p><!-- À COMPLÉTER : œuvres romanesques, publications --></p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">[année]</span>
+        <h3>Naissance des Fêlés</h3>
+        <p>Avec Thierry Voitot, formation du duo musical-poétique sous l'égide de VIA GNOSIS — résurgence de la Guilde des Poètes.</p>
+      </div>
+
+      <div class="journey-step">
+        <span class="year">2026</span>
+        <h3>Photon-Expo &amp; ateliers</h3>
+        <p>Animation de l'atelier Écriture lors du festival Photon-Expo à Offemont — initiation à l'écriture poétique et créative.</p>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===========  LE DUO LES FÊLÉS  =========== -->
   <section class="duo">
     <div class="section-header">
@@ -472,8 +613,8 @@
       <div class="duo-grid">
         <div class="duo-member">
           <h4>Marie-Thérèse Lecrille</h4>
-          <p class="role">Poétesse, parolière, romancière</p>
-          <p>Auteure-compositrice SACEM. Apporte au duo l'écriture, la sensibilité narrative et la voix poétique.</p>
+          <p class="role">Poétesse, parolière, romancière, peintre</p>
+          <p>Auteure SACEM. Apporte au duo l'écriture, la sensibilité narrative et la voix poétique.</p>
         </div>
         <div class="duo-member">
           <h4>Thierry Voitot</h4>
@@ -561,7 +702,7 @@
   <footer>
     <p class="footer-quote">Les Fêlés — où la lumière passe par les fissures</p>
     <div class="footer-meta">
-      <p>Marie-Thérèse Lecrille · Auteure-compositrice SACEM</p>
+      <p>Marie-Thérèse Lecrille · Auteure SACEM</p>
       <p>© 2026 — Tous droits réservés</p>
       <p>Site VIA GNOSIS · création <a href="https://tvt90.github.io/artist-presentation/" target="_blank" rel="noopener" style="color: var(--copper-bright);">Thierry Voitot</a></p>
     </div>
