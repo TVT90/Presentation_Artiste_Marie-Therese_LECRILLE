@@ -553,7 +553,7 @@
       margin-top: 0.5rem;
     }
 
-    /* Séparateur ornemental entre stats et galerie de couvertures */
+    /* Séparateur ornemental */
     .novel-divider {
       max-width: 600px;
       margin: 0 auto 3rem;
@@ -686,23 +686,60 @@
       text-transform: uppercase;
     }
 
-    /* Chapitre IV — Peintures (placeholders provisoires) */
+    /* =========  CHAPITRE IV — PEINTURES (galerie format paysage 4:3)  ========= */
     .paintings-gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-top: 1rem;
     }
     .painting-card {
       background-color: var(--paper);
       border: 1px solid var(--gold-soft);
       border-radius: 4px;
       overflow: hidden;
+      box-shadow: var(--shadow-soft);
       transition: transform .35s ease, box-shadow .35s ease;
+      display: flex;
+      flex-direction: column;
     }
-    .painting-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .painting-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .painting-thumb {
+      display: block;
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background-color: var(--paper-deep);
+      cursor: zoom-in;
+    }
+    .painting-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .5s ease;
+    }
+    .painting-thumb:hover img { transform: scale(1.04); }
+    .painting-thumb::after {
+      content: '⊕';
+      position: absolute;
+      bottom: 12px; right: 12px;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(160, 82, 45, 0.85);
+      color: var(--paper);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .painting-thumb:hover::after { opacity: 1; }
+    /* Placeholder pour les peintures à venir : aspect dégradé doré */
     .painting-placeholder {
+      aspect-ratio: 4 / 3;
       background: linear-gradient(135deg, var(--paper-deep) 0%, var(--gold-soft) 50%, var(--paper-deep) 100%);
-      height: 170px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -716,21 +753,45 @@
     .painting-placeholder::after {
       content: '';
       position: absolute;
-      inset: 8px;
+      inset: 12px;
       border: 1px solid var(--copper);
       opacity: 0.3;
     }
-    .painting-card .info { padding: 1.1rem 1.4rem; }
-    .painting-card h4 {
-      font-size: 1.05rem;
-      font-style: italic;
-      margin-bottom: 0.2rem;
-      color: var(--sepia-deep);
-    }
-    .painting-card .technique {
-      font-size: 0.82rem;
+    .painting-placeholder .coming-soon {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
       color: var(--sepia-mute);
-      letter-spacing: 0.05em;
+      font-style: normal;
+    }
+    .painting-info {
+      padding: 1.3rem 1.4rem 1.5rem;
+      text-align: center;
+    }
+    .painting-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--sepia-deep);
+      margin-bottom: 0.4rem;
+    }
+    .painting-info .technique {
+      font-size: 0.78rem;
+      color: var(--sepia-mute);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .painting-info p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--sepia-soft);
+      line-height: 1.5;
     }
 
     .gallery-note {
@@ -909,7 +970,7 @@
       margin-top: 0.5rem;
     }
 
-    /* Lightbox CSS pure via :target — partagé presse + sculptures + romans */
+    /* Lightbox CSS pure via :target — partagé presse + sculptures + romans + peintures */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1077,9 +1138,12 @@
       .poem-excerpt { padding: 1.8rem 1.6rem; font-size: 1.25rem; line-height: 1.7; }
       .poem-excerpt cite { font-size: 0.85rem; }
 
-      .painting-card .info { padding: 1.2rem 1.4rem; }
-      .painting-card h4 { font-size: 1.2rem; }
-      .painting-card .technique { font-size: 0.95rem; }
+      .painting-info { padding: 1.4rem 1.3rem 1.6rem; }
+      .painting-info h4 { font-size: 1.4rem; }
+      .painting-info .technique { font-size: 0.85rem; }
+      .painting-info p { font-size: 1.05rem; }
+      .painting-placeholder { font-size: 1.4rem; }
+      .painting-placeholder .coming-soon { font-size: 0.8rem; }
       .gallery-note { font-size: 1.05rem; }
 
       .sculpture-info { padding: 1.4rem 1.3rem 1.6rem; }
@@ -1375,45 +1439,54 @@
     </article>
 
     <!-- ────────  CHAPITRE IV — PEINTURES  ──────── -->
-    <article class="chapter">
+    <article class="chapter" id="chapitre-iv">
       <header class="chapter-header">
         <span class="chapter-num">Chapitre IV</span>
         <h3 class="chapter-title">Peintures</h3>
       </header>
 
       <p class="chapter-intro">
-        Paysages francs-comtois, natures mortes, sous-bois aux chemins creux. Huile sur toile.
+        Paysages francs-comtois, natures mortes, sous-bois aux chemins creux — huile sur toile, toutes dimensions.
       </p>
 
       <div class="paintings-gallery">
+
         <div class="painting-card">
-          <div class="painting-placeholder">Paysages</div>
-          <div class="info">
-            <h4>Paysages francs-comtois</h4>
+          <a class="painting-thumb" href="#peinture-1">
+            <img src="peinture1.jpg" alt="Nature morte aux citrons — huile sur toile, trois citrons sur fond ocre" loading="lazy">
+          </a>
+          <div class="painting-info">
+            <h4>Nature morte aux citrons</h4>
             <p class="technique">Huile sur toile</p>
+            <p>Trois citrons sur fond ocre — la lumière dorée saisie dans son éclat.</p>
           </div>
         </div>
 
         <div class="painting-card">
-          <div class="painting-placeholder">Sous-bois</div>
-          <div class="info">
+          <div class="painting-placeholder">
+            Paysage
+            <span class="coming-soon">à venir</span>
+          </div>
+          <div class="painting-info">
+            <h4>Paysage franc-comtois</h4>
+            <p class="technique">Huile sur toile</p>
+            <p>Photographie de l'œuvre à venir — un paysage de Franche-Comté.</p>
+          </div>
+        </div>
+
+        <div class="painting-card">
+          <div class="painting-placeholder">
+            Sous-bois
+            <span class="coming-soon">à venir</span>
+          </div>
+          <div class="painting-info">
             <h4>Sous-bois aux chemins creux</h4>
             <p class="technique">Huile sur toile</p>
+            <p>Photographie de l'œuvre à venir — un sous-bois et son chemin secret.</p>
           </div>
         </div>
 
-        <div class="painting-card">
-          <div class="painting-placeholder">Natures mortes</div>
-          <div class="info">
-            <h4>Natures mortes</h4>
-            <p class="technique">Huile sur toile</p>
-          </div>
-        </div>
       </div>
-
-      <p class="gallery-note">
-        Galerie en cours de constitution — les photographies des œuvres viendront enrichir cette section.
-      </p>
     </article>
 
     <!-- ────────  CHAPITRE V — SCULPTURES SUR BOIS  ──────── -->
@@ -1567,6 +1640,13 @@
     <a class="lightbox-close" href="#chapitre-ii"></a>
     <a class="lightbox-x" href="#chapitre-ii" aria-label="Fermer">×</a>
     <img src="roman3.jpg" alt="Franc-Comtoisement vôtre I — couverture complète">
+  </div>
+
+  <!-- Lightboxes des peintures — fermeture vers #chapitre-iv -->
+  <div class="lightbox" id="peinture-1">
+    <a class="lightbox-close" href="#chapitre-iv"></a>
+    <a class="lightbox-x" href="#chapitre-iv" aria-label="Fermer">×</a>
+    <img src="peinture1.jpg" alt="Nature morte aux citrons — vue détaillée">
   </div>
 
   <!-- ===========  CONTACT  =========== -->
