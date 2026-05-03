@@ -358,28 +358,6 @@
       font-style: normal;
     }
 
-    /* Responsive : timeline en colonne unique sur mobile */
-    @media (max-width: 700px) {
-      .journey-timeline::before {
-        left: 12px;
-      }
-      .journey-step,
-      .journey-step:nth-child(odd),
-      .journey-step:nth-child(even) {
-        width: 100%;
-        left: 0;
-        text-align: left;
-        padding-left: 2.5rem;
-        padding-right: 0.5rem;
-      }
-      .journey-step::before,
-      .journey-step:nth-child(odd)::before,
-      .journey-step:nth-child(even)::before {
-        left: 6px;
-        right: auto;
-      }
-    }
-
     /* =========  DUO LES FÊLÉS  ========= */
     .duo {
       background-color: var(--paper);
@@ -948,12 +926,81 @@
     }
     footer .footer-meta p { margin: 0.3rem 0; }
 
-    /* =========  RESPONSIVE  ========= */
-    @media (max-width: 600px) {
-      section { padding: 3.5rem 1.2rem; }
-      .approach { padding: 4rem 1.5rem; }
-      .hero-content { padding: 3rem 1.2rem; }
-      .duo-card { padding: 2rem 1.5rem; }
+    /* =========  RESPONSIVE MOBILE  ========= */
+    @media (max-width: 700px) {
+      /* Police de base augmentée sur mobile pour confort de lecture */
+      body { font-size: 18px; line-height: 1.75; }
+
+      /* Marges latérales réduites pour gagner en surface utile */
+      section { padding: 3rem 0.9rem; }
+      .approach { padding: 3.5rem 1.2rem; }
+
+      /* Hero : nom toujours imposant mais hauteur compactée */
+      .hero { min-height: 75vh; }
+      .hero-content { padding: 2.5rem 1rem; }
+      .hero h1 { font-size: 2.6rem; }
+      .hero-subtitle { font-size: 1.05rem; }
+      .hero-tags { font-size: 0.85rem; gap: 0.5rem 0.9rem; letter-spacing: 0.18em; }
+      .hero-tags span + span::before { margin-right: 0.9rem; }
+
+      /* En-têtes de sections plus présents */
+      .section-header h2 { font-size: 1.85rem; }
+
+      /* Univers poétique : taille de citation ajustée */
+      .approach p { font-size: 1.15rem; }
+
+      /* Cartouches divers : padding réduit pour plus de contenu */
+      .duo-card { padding: 2rem 1.4rem; }
+      .work-card { padding: 1.7rem 1.4rem; }
+      .novel-feature { padding: 2.2rem 1.4rem 2rem; }
+      .youtube-invite { padding: 1.7rem 1.4rem; }
+      .youtube-invite p { font-size: 1.1rem; }
+      .poem-excerpt { padding: 1.5rem 1.6rem; font-size: 1.08rem; }
+
+      /* Cartes de presse : titre plus lisible */
+      .press-title { font-size: 1.05rem; }
+      .press-info { padding: 1.2rem 1.2rem 1.4rem; }
+
+      /* Chapitres : moins d'espace perdu */
+      .chapter-title { font-size: 1.6rem; }
+      .chapter + .chapter::before { margin-bottom: 2.2rem; }
+
+      /* Stats romans : chiffres toujours bien marqués */
+      .novel-stat .number { font-size: 2.4rem; }
+
+      /* Timeline parcours : colonne unique */
+      .journey-timeline::before {
+        left: 12px;
+      }
+      .journey-step,
+      .journey-step:nth-child(odd),
+      .journey-step:nth-child(even) {
+        width: 100%;
+        left: 0;
+        text-align: left;
+        padding: 1rem 0.5rem 1rem 2.4rem;
+      }
+      .journey-step::before,
+      .journey-step:nth-child(odd)::before,
+      .journey-step:nth-child(even)::before {
+        left: 6px;
+        right: auto;
+      }
+      .journey-step h3 { font-size: 1.2rem; }
+      .journey-step p { font-size: 1rem; }
+
+      /* Affiliations en colonne sur très petit écran */
+      .affiliations-list { font-size: 1.05rem; line-height: 2; }
+    }
+
+    @media (max-width: 400px) {
+      /* Très petits écrans : ajustements supplémentaires */
+      .hero h1 { font-size: 2.2rem; }
+      .hero-tags { font-size: 0.78rem; letter-spacing: 0.15em; }
+      .section-header h2 { font-size: 1.6rem; }
+      .chapter-title { font-size: 1.45rem; }
+      .novel-feature h4 { font-size: 1.7rem; }
+      .duo-card h3 { font-size: 1.5rem; }
     }
   </style>
 </head>
