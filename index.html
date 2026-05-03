@@ -478,7 +478,7 @@
       color: var(--paper);
     }
 
-    /* Chapitre II — Romans */
+    /* Chapitre II — Romans : œuvre majeure */
     .novel-feature {
       background-color: var(--paper);
       border: 1px solid var(--gold-soft);
@@ -533,6 +533,7 @@
       flex-wrap: wrap;
       gap: 2.5rem 3rem;
       text-align: center;
+      margin-bottom: 4rem;
     }
     .novel-stat { min-width: 130px; }
     .novel-stat .number {
@@ -550,6 +551,104 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
       margin-top: 0.5rem;
+    }
+
+    /* Séparateur ornemental entre stats et galerie de couvertures */
+    .novel-divider {
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      text-align: center;
+      color: var(--copper);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      letter-spacing: 0.3em;
+    }
+    .novel-divider::before,
+    .novel-divider::after {
+      content: '';
+      display: inline-block;
+      width: 50px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--copper), transparent);
+      vertical-align: middle;
+      margin: 0 1rem;
+    }
+
+    /* Chapitre II — Galerie des couvertures de romans */
+    .novels-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .novel-card {
+      background-color: var(--paper);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .35s ease, box-shadow .35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .novel-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .novel-cover {
+      display: block;
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background-color: var(--paper-deep);
+      cursor: zoom-in;
+    }
+    .novel-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform .5s ease;
+    }
+    .novel-cover:hover img { transform: scale(1.04); }
+    .novel-cover::after {
+      content: '⊕';
+      position: absolute;
+      bottom: 12px; right: 12px;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(160, 82, 45, 0.85);
+      color: var(--paper);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .novel-cover:hover::after { opacity: 1; }
+    .novel-info {
+      padding: 1.3rem 1.4rem 1.5rem;
+      text-align: center;
+    }
+    .novel-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--sepia-deep);
+      margin-bottom: 0.4rem;
+    }
+    .novel-info .genre {
+      font-size: 0.78rem;
+      color: var(--sepia-mute);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .novel-info p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--sepia-soft);
+      line-height: 1.5;
     }
 
     .chapter-intro {
@@ -810,7 +909,7 @@
       margin-top: 0.5rem;
     }
 
-    /* Lightbox CSS pure via :target — partagé presse + sculptures */
+    /* Lightbox CSS pure via :target — partagé presse + sculptures + romans */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -968,6 +1067,12 @@
       .novel-feature p { font-size: 1.1rem; }
       .novel-stat .number { font-size: 2.6rem; }
       .novel-stat .label { font-size: 0.9rem; }
+
+      .novel-divider { font-size: 1rem; }
+      .novel-info { padding: 1.4rem 1.3rem 1.6rem; }
+      .novel-info h4 { font-size: 1.4rem; }
+      .novel-info .genre { font-size: 0.85rem; }
+      .novel-info p { font-size: 1.05rem; }
 
       .poem-excerpt { padding: 1.8rem 1.6rem; font-size: 1.25rem; line-height: 1.7; }
       .poem-excerpt cite { font-size: 0.85rem; }
@@ -1183,7 +1288,7 @@
     </article>
 
     <!-- ────────  CHAPITRE II — ROMANS  ──────── -->
-    <article class="chapter">
+    <article class="chapter" id="chapitre-ii">
       <header class="chapter-header">
         <span class="chapter-num">Chapitre II</span>
         <h3 class="chapter-title">Romans</h3>
@@ -1209,6 +1314,45 @@
           <span class="number">★</span>
           <p class="label">Récompenses littéraires</p>
         </div>
+      </div>
+
+      <p class="novel-divider">quelques titres</p>
+
+      <div class="novels-gallery">
+
+        <div class="novel-card">
+          <a class="novel-cover" href="#roman-1">
+            <img src="roman1.jpg" alt="Le dernier Puits — couverture sépia, portrait ovale d'aïeule" loading="lazy">
+          </a>
+          <div class="novel-info">
+            <h4>Le dernier Puits</h4>
+            <p class="genre">Roman historique · 1860–1907</p>
+            <p>L'épopée de Louise Maréchal, jeune Haut-Saônoise dont la volonté défie son siècle.</p>
+          </div>
+        </div>
+
+        <div class="novel-card">
+          <a class="novel-cover" href="#roman-2">
+            <img src="roman2.jpg" alt="Les Anges de Memphis — couverture noir et blanc, motards sur la route 66" loading="lazy">
+          </a>
+          <div class="novel-info">
+            <h4>Les Anges de Memphis</h4>
+            <p class="genre">Road-novel · Route 66</p>
+            <p>Un grand reporter parisien adopté par une bande de bikers, des plaines américaines à la frontière mexicaine.</p>
+          </div>
+        </div>
+
+        <div class="novel-card">
+          <a class="novel-cover" href="#roman-3">
+            <img src="roman3.jpg" alt="Franc-Comtoisement vôtre I — couverture aquarelle, coucher de soleil sur les Vosges" loading="lazy">
+          </a>
+          <div class="novel-info">
+            <h4>Franc-Comtoisement vôtre I</h4>
+            <p class="genre">Sept nouvelles franc-comtoises</p>
+            <p>Du rire aux larmes, sept histoires de la Franche-Comté d'après-guerre.</p>
+          </div>
+        </div>
+
       </div>
     </article>
 
@@ -1406,6 +1550,23 @@
     <a class="lightbox-close" href="#chapitre-v"></a>
     <a class="lightbox-x" href="#chapitre-v" aria-label="Fermer">×</a>
     <img src="sculpture3.jpg" alt="Le Veilleur — vue détaillée">
+  </div>
+
+  <!-- Lightboxes des romans — fermeture vers #chapitre-ii -->
+  <div class="lightbox" id="roman-1">
+    <a class="lightbox-close" href="#chapitre-ii"></a>
+    <a class="lightbox-x" href="#chapitre-ii" aria-label="Fermer">×</a>
+    <img src="roman1.jpg" alt="Le dernier Puits — couverture complète">
+  </div>
+  <div class="lightbox" id="roman-2">
+    <a class="lightbox-close" href="#chapitre-ii"></a>
+    <a class="lightbox-x" href="#chapitre-ii" aria-label="Fermer">×</a>
+    <img src="roman2.jpg" alt="Les Anges de Memphis — couverture complète">
+  </div>
+  <div class="lightbox" id="roman-3">
+    <a class="lightbox-close" href="#chapitre-ii"></a>
+    <a class="lightbox-x" href="#chapitre-ii" aria-label="Fermer">×</a>
+    <img src="roman3.jpg" alt="Franc-Comtoisement vôtre I — couverture complète">
   </div>
 
   <!-- ===========  CONTACT  =========== -->
