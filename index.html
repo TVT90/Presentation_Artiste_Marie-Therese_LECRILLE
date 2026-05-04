@@ -756,14 +756,20 @@
       flex-direction: column;
     }
     .painting-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    /* Cartes peintures : align-self: start permet à chaque carte d'avoir sa propre hauteur
+       sans s'étirer au niveau de la plus haute, respectant ainsi le ratio naturel de chaque toile */
+    .paintings-gallery .painting-card { align-self: start; }
     .painting-thumb {
       display: block;
       position: relative;
-      aspect-ratio: 4 / 3;
       overflow: hidden;
       background-color: var(--paper-deep);
       cursor: zoom-in;
     }
+    /* Ratios spécifiques par tableau — option C : chaque œuvre dans ses propres proportions */
+    .painting-thumb.landscape { aspect-ratio: 4 / 3; }     /* paysage : nature morte */
+    .painting-thumb.portrait  { aspect-ratio: 3 / 4; }     /* portrait classique : sous-bois */
+    .painting-thumb.tall      { aspect-ratio: 5 / 8; }     /* portrait haut : tournesols */
     .painting-thumb img {
       width: 100%;
       height: 100%;
@@ -788,37 +794,6 @@
       transition: opacity .3s ease;
     }
     .painting-thumb:hover::after { opacity: 1; }
-    .painting-placeholder {
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, var(--paper-deep) 0%, var(--gold-soft) 50%, var(--paper-deep) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--copper);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      letter-spacing: 0.05em;
-      position: relative;
-    }
-    .painting-placeholder::after {
-      content: '';
-      position: absolute;
-      inset: 12px;
-      border: 1px solid var(--copper);
-      opacity: 0.3;
-    }
-    .painting-placeholder .coming-soon {
-      position: absolute;
-      bottom: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--sepia-mute);
-      font-style: normal;
-    }
     .painting-info {
       padding: 1.3rem 1.4rem 1.5rem;
       text-align: center;
@@ -1195,8 +1170,6 @@
       .painting-info h4 { font-size: 1.4rem; }
       .painting-info .technique { font-size: 0.85rem; }
       .painting-info p { font-size: 1.05rem; }
-      .painting-placeholder { font-size: 1.4rem; }
-      .painting-placeholder .coming-soon { font-size: 0.8rem; }
       .gallery-note { font-size: 1.05rem; }
 
       .sculpture-info { padding: 1.4rem 1.3rem 1.6rem; }
@@ -1531,13 +1504,13 @@
       </header>
 
       <p class="chapter-intro">
-        Paysages francs-comtois, natures mortes, sous-bois aux chemins creux — huile sur toile, toutes dimensions.
+        Natures mortes, bouquets et sous-bois d'automne — huile sur toile, toutes dimensions.
       </p>
 
       <div class="paintings-gallery">
 
         <div class="painting-card">
-          <a class="painting-thumb" href="#peinture-1">
+          <a class="painting-thumb landscape" href="#peinture-1">
             <img src="peinture1.jpg" alt="Nature morte aux citrons — huile sur toile, trois citrons sur fond ocre" loading="lazy">
           </a>
           <div class="painting-info">
@@ -1548,26 +1521,24 @@
         </div>
 
         <div class="painting-card">
-          <div class="painting-placeholder">
-            Paysage
-            <span class="coming-soon">à venir</span>
-          </div>
+          <a class="painting-thumb tall" href="#peinture-2">
+            <img src="peinture2.jpg" alt="Trois soleils en cascade — bouquet de tournesols sur fond brun, huile sur toile" loading="lazy">
+          </a>
           <div class="painting-info">
-            <h4>Paysage franc-comtois</h4>
+            <h4>Trois soleils en cascade</h4>
             <p class="technique">Huile sur toile</p>
-            <p>Photographie de l'œuvre à venir — un paysage de Franche-Comté.</p>
+            <p>L'or qui s'élève, du bouton fermé à la pleine corolle — trois âges du soleil sur fond de chaleur boisée.</p>
           </div>
         </div>
 
         <div class="painting-card">
-          <div class="painting-placeholder">
-            Sous-bois
-            <span class="coming-soon">à venir</span>
-          </div>
+          <a class="painting-thumb portrait" href="#peinture-3">
+            <img src="peinture3.jpg" alt="Sous-bois d'automne — huile sur toile, troncs majestueux et lumière dorée filtrant entre les feuillages" loading="lazy">
+          </a>
           <div class="painting-info">
-            <h4>Sous-bois aux chemins creux</h4>
+            <h4>Sous-bois d'automne</h4>
             <p class="technique">Huile sur toile</p>
-            <p>Photographie de l'œuvre à venir — un sous-bois et son chemin secret.</p>
+            <p>La lumière dorée filtre entre les troncs — la forêt en sa robe d'octobre, touches impressionnistes pour saluer la saison.</p>
           </div>
         </div>
 
@@ -1749,6 +1720,16 @@
     <a class="lightbox-close" href="#chapitre-iv"></a>
     <a class="lightbox-x" href="#chapitre-iv" aria-label="Fermer">×</a>
     <img src="peinture1.jpg" alt="Nature morte aux citrons — vue détaillée">
+  </div>
+  <div class="lightbox" id="peinture-2">
+    <a class="lightbox-close" href="#chapitre-iv"></a>
+    <a class="lightbox-x" href="#chapitre-iv" aria-label="Fermer">×</a>
+    <img src="peinture2.jpg" alt="Trois soleils en cascade — vue détaillée">
+  </div>
+  <div class="lightbox" id="peinture-3">
+    <a class="lightbox-close" href="#chapitre-iv"></a>
+    <a class="lightbox-x" href="#chapitre-iv" aria-label="Fermer">×</a>
+    <img src="peinture3.jpg" alt="Sous-bois d'automne — vue détaillée">
   </div>
 
   <!-- ===========  CONTACT  =========== -->
