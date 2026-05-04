@@ -662,28 +662,80 @@
       line-height: 1.6;
     }
 
-    /* Chapitre III — Poésies */
-    .poem-excerpt {
-      max-width: 540px;
-      margin: 0 auto;
-      padding: 2rem 2.5rem;
-      border-left: 2px solid var(--copper);
-      background-color: var(--paper);
-      border-radius: 0 4px 4px 0;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--sepia-deep);
-      line-height: 1.8;
+    /* =========  CHAPITRE III — POÉSIES (galerie de manuscrits)  ========= */
+    .poems-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
     }
-    .poem-excerpt cite {
+    .poem-card {
+      background-color: var(--paper);
+      border: 1px solid var(--gold-soft);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: transform .35s ease, box-shadow .35s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .poem-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .poem-manuscript {
       display: block;
-      margin-top: 1.2rem;
+      position: relative;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background-color: var(--paper-deep);
+      cursor: zoom-in;
+    }
+    .poem-manuscript img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform .5s ease;
+    }
+    .poem-manuscript:hover img { transform: scale(1.03); }
+    .poem-manuscript::after {
+      content: '⊕';
+      position: absolute;
+      bottom: 12px; right: 12px;
+      width: 32px; height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(160, 82, 45, 0.85);
+      color: var(--paper);
+      border-radius: 50%;
+      font-size: 1.2rem;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    .poem-manuscript:hover::after { opacity: 1; }
+    .poem-info {
+      padding: 1.3rem 1.4rem 1.5rem;
+      text-align: center;
+    }
+    .poem-info h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--sepia-deep);
+      margin-bottom: 0.4rem;
+    }
+    .poem-info .date {
       font-size: 0.78rem;
       color: var(--sepia-mute);
-      font-style: normal;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .poem-info .invite {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.92rem;
+      color: var(--copper);
+      margin-top: 0.4rem;
     }
 
     /* =========  CHAPITRE IV — PEINTURES (galerie format paysage 4:3)  ========= */
@@ -736,7 +788,6 @@
       transition: opacity .3s ease;
     }
     .painting-thumb:hover::after { opacity: 1; }
-    /* Placeholder pour les peintures à venir : aspect dégradé doré */
     .painting-placeholder {
       aspect-ratio: 4 / 3;
       background: linear-gradient(135deg, var(--paper-deep) 0%, var(--gold-soft) 50%, var(--paper-deep) 100%);
@@ -970,7 +1021,7 @@
       margin-top: 0.5rem;
     }
 
-    /* Lightbox CSS pure via :target — partagé presse + sculptures + romans + peintures */
+    /* Lightbox CSS pure via :target — partagé presse + sculptures + romans + peintures + poèmes */
     .lightbox {
       position: fixed;
       inset: 0;
@@ -1135,8 +1186,10 @@
       .novel-info .genre { font-size: 0.85rem; }
       .novel-info p { font-size: 1.05rem; }
 
-      .poem-excerpt { padding: 1.8rem 1.6rem; font-size: 1.25rem; line-height: 1.7; }
-      .poem-excerpt cite { font-size: 0.85rem; }
+      .poem-info { padding: 1.4rem 1.3rem 1.6rem; }
+      .poem-info h4 { font-size: 1.45rem; }
+      .poem-info .date { font-size: 0.85rem; }
+      .poem-info .invite { font-size: 1rem; }
 
       .painting-info { padding: 1.4rem 1.3rem 1.6rem; }
       .painting-info h4 { font-size: 1.4rem; }
@@ -1421,21 +1474,53 @@
     </article>
 
     <!-- ────────  CHAPITRE III — POÉSIES  ──────── -->
-    <article class="chapter">
+    <article class="chapter" id="chapitre-iii">
       <header class="chapter-header">
         <span class="chapter-num">Chapitre III</span>
         <h3 class="chapter-title">Poésies</h3>
       </header>
 
       <p class="chapter-intro">
-        Cent dix poèmes à l'honneur de la Franche-Comté — paysages, terroir, mémoire des lieux.
+        Cent dix poèmes calligraphiés à la plume — paysages, terroir, mémoire des saisons.
+        Trois pages choisies, comme une fenêtre ouverte sur le cahier de poésie.
       </p>
 
-      <blockquote class="poem-excerpt">
-        « Un extrait choisi sera placé ici, comme une fenêtre ouverte
-        sur les paysages que les vers traversent. »
-        <cite>— extrait à choisir</cite>
-      </blockquote>
+      <div class="poems-gallery">
+
+        <div class="poem-card">
+          <a class="poem-manuscript" href="#poeme-1">
+            <img src="poeme1.jpg" alt="Dans la rosée d'automne — manuscrit calligraphié à la plume, page de cahier à enluminures rouges" loading="lazy">
+          </a>
+          <div class="poem-info">
+            <h4>Dans la rosée d'automne</h4>
+            <p class="date">manuscrit calligraphié</p>
+            <p class="invite">cliquer pour lire</p>
+          </div>
+        </div>
+
+        <div class="poem-card">
+          <a class="poem-manuscript" href="#poeme-2">
+            <img src="poeme2.jpg" alt="Émotions automnales — manuscrit calligraphié à la plume, signé MTPL décembre 2019" loading="lazy">
+          </a>
+          <div class="poem-info">
+            <h4>Émotions automnales</h4>
+            <p class="date">décembre 2019</p>
+            <p class="invite">cliquer pour lire</p>
+          </div>
+        </div>
+
+        <div class="poem-card">
+          <a class="poem-manuscript" href="#poeme-3">
+            <img src="poeme3.jpg" alt="Soleil rasant — manuscrit calligraphié à la plume, signé MTPL décembre 2015" loading="lazy">
+          </a>
+          <div class="poem-info">
+            <h4>Soleil rasant</h4>
+            <p class="date">décembre 2015</p>
+            <p class="invite">cliquer pour lire</p>
+          </div>
+        </div>
+
+      </div>
     </article>
 
     <!-- ────────  CHAPITRE IV — PEINTURES  ──────── -->
@@ -1640,6 +1725,23 @@
     <a class="lightbox-close" href="#chapitre-ii"></a>
     <a class="lightbox-x" href="#chapitre-ii" aria-label="Fermer">×</a>
     <img src="roman3.jpg" alt="Franc-Comtoisement vôtre I — couverture complète">
+  </div>
+
+  <!-- Lightboxes des poèmes — fermeture vers #chapitre-iii -->
+  <div class="lightbox" id="poeme-1">
+    <a class="lightbox-close" href="#chapitre-iii"></a>
+    <a class="lightbox-x" href="#chapitre-iii" aria-label="Fermer">×</a>
+    <img src="poeme1.jpg" alt="Dans la rosée d'automne — manuscrit complet">
+  </div>
+  <div class="lightbox" id="poeme-2">
+    <a class="lightbox-close" href="#chapitre-iii"></a>
+    <a class="lightbox-x" href="#chapitre-iii" aria-label="Fermer">×</a>
+    <img src="poeme2.jpg" alt="Émotions automnales — manuscrit complet">
+  </div>
+  <div class="lightbox" id="poeme-3">
+    <a class="lightbox-close" href="#chapitre-iii"></a>
+    <a class="lightbox-x" href="#chapitre-iii" aria-label="Fermer">×</a>
+    <img src="poeme3.jpg" alt="Soleil rasant — manuscrit complet">
   </div>
 
   <!-- Lightboxes des peintures — fermeture vers #chapitre-iv -->
